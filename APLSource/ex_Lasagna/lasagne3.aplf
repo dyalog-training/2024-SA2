@@ -1,0 +1,1 @@
+ lasagne3←{↑{amts[⍵]+.×spices[inds[⍵];]}¨{⊂⍵}⌸groups}

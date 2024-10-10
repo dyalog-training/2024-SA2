@@ -1,0 +1,6 @@
+ CosineSimilarity1←{
+ ⍝ ⍺, ⍵: numeric vectors of equal length
+ ⍝    ←: cosine similarity
+     Abs←{0.5*⍨+/⍵*2}
+     (⍺+.×⍵)÷⍺×⍥Abs ⍵
+ }

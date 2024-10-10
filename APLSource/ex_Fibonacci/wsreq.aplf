@@ -1,0 +1,13 @@
+ wsreq←{                         ⍝ WS required to execute expression ⍵.
+     -/{                         ⍝ max padding difference for exprs '⍬' and ⍵
+         (⍎'{(',⍵,')}'){         ⍝ subject expr ⍵ embedded in dfn operand
+             ⎕SIGNAL 0:          ⍝ clear previous ⎕DM
+             1::(1↑⍵),⍺          ⍝ wsfull:: explore lower range (lo .. mid)
+             (⍺,1↓⍵)⊣⍺⍺ ⍺⍴' '    ⍝ eval ok: explore upper range (mid .. hi)
+         }{                      ⍝ binary search for WS FULL failure point:
+             mid←⌊+/⍵÷2          ⍝ mid point of range
+             mid=1↑⍵:mid         ⍝ convergence: maximum packing value
+             ∇ mid ⍺⍺ ⍵          ⍝ explore upper else lower range
+         }0 ⎕WA                  ⍝ starting with maximum range
+     }¨'⍬'⍵                      ⍝ calibration and subject expressions.
+ }

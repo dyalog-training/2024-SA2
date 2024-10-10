@@ -1,0 +1,11 @@
+ notes←{
+     pw←⎕PW ⋄ ⎕PW←200
+     c←⊂'(.5×1+5*.5)∘{((⍺*⍵)-(1-⍺)*⍵)÷5*.5}¨'   ⍝ Binet formula (Dick Bowman)
+     c,←⊂'(0.5×1+1 ¯1×5*0.5)∘{(-⌿⍺∘.*⍵)÷-/⍺}'   ⍝ Binet (PMH)
+     c,←⊂'{1∧+∘÷/0,⍵/1}¨'                       ⍝ Continued fractions
+     c,←⊂'{⎕io ← 0 ⋄ +/!∘⌽⍨⍳⍵}¨'                ⍝ Sum of binomial coefficients (Jay Foad)
+     v←⍳10
+     Q←'"'∘{⍺,⍵,'v',⍺}
+     ⎕←']runtime -c',Q¨c
+     ⎕PW←pw
+ }

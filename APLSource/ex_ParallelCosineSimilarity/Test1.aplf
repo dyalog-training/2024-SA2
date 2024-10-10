@@ -1,0 +1,17 @@
+ Test1
+ x←↓?1000 4⍴20
+
+ part1←{(x[⍵+⍳⍺])∘.CosineSimilarity1 x}
+ iss←#.isolate.New¨4⍴⊂(⊂(⍕⎕THIS),'.'),¨'part1' 'CosineSimilarity1'
+
+ iss.(≢(⎕WA-100)⍴' ')
+
+ iss.x←⊂x
+
+ t←⎕AI[3] ⋄ rI←⊃⍪/250 iss.part1 250×¯1+⍳4 ⋄ 'parallel',⎕AI[3]-t
+ ⍝ 2774
+ t←⎕AI[3] ⋄ rS←∘.CosineSimilarity1⍨x ⋄ 'serial:',⎕AI[3]-t
+ ⎕EX'iss'
+ #.isolate.Reset 0
+ ⍝ 4236
+ rI≡rS

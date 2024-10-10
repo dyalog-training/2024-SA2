@@ -1,0 +1,17 @@
+How long do the following lines take to *return* (and *run*)
+
+{⎕DL   1      }TimeOp ''
+
+{⎕DL¨  1 2    }TimeOp ''
+
+{⎕DL&¨ 1 2    }TimeOp ''
+
+{⎕TSYNC ⎕DL&¨ 1 2 }TimeOp ''
+
+{⎕DL #.IÏ 1 2  }TimeOp ''
+ 
+ 
+
+
+
+

@@ -1,0 +1,4 @@
+ notes
+ UniformRandomMixedVector←{chars←{⎕A[?⍨26]}¨⍳⍵ ⋄ nums←?⍨⍵ ⋄ (nums,chars)[?⍨2×⍵]}
+ ⍴vec←UniformRandomMixedVector 1000000
+ ⎕←' ]runtime -c "(0 2∊⍨10|⎕DR)¨vec" "{⎕ML←0 ⋄ ~0⍷∊⍵}vec"  '

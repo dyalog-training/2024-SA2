@@ -1,0 +1,7 @@
+ Normalize←{
+⍝ Apply to one col at a time
+     u←∪⍵
+     ⎕←(1↑⍵)(≢u)
+     100<≢u:⍵
+     u⍳⍵
+ }

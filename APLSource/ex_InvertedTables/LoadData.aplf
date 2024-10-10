@@ -1,0 +1,23 @@
+ LoadData←{
+     Size←{'Size of ',⍵,' table (Mb):',1000000÷⍨⎕SIZE ⍵}
+     d←⎕CSV'C:\Data\PayRollCSV\NYC_Payroll_2020.csv'⍬ 4
+     ⎕←Size'd'
+
+     ivt←invert d
+     ⎕←Size'ivt'
+
+     ivt2←invert 1↓d
+     ⎕←Size'ivt2'
+
+    ⍝ EX1: Compare Sizes
+
+    ⍝ EX2: Compare Lookups of 5 random indices
+
+    ⍝ EX2.1: Why did Lookup fail?
+    ⍝ Investigate data types (hint use ⎕DR)
+
+    ⍝ EX3: Compare Lookups of 5k random indices
+
+    ⍝ ]runtime -c "d ⍳d[i;]"   "ivt2 IndexOf (⊂⊂i)⌷¨ivt2"
+
+ }

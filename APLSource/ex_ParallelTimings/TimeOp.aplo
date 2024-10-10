@@ -1,0 +1,9 @@
+ TimeOp←{
+⍝ Runtime of function in s with ms precision
+     Time←{11 ⎕DT⊂⎕TS} ⍝ 11 = shakti k7 ms
+     ⍺←⊢
+     a←Time''
+     _←⍺ ⍺⍺ ⍵
+     b←Time''
+     1000÷⍨b-a
+ }

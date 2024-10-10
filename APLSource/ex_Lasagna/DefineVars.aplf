@@ -1,0 +1,7 @@
+ DefineVars
+ ⍝ Global to this space
+ n←800000
+ spices←?6000 44⍴0
+ groups←+\(16↑1 2)[?n⍴16]
+ inds←?n⍴≢spices
+ amts←?n⍴0
